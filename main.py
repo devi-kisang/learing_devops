@@ -9,3 +9,7 @@ async def root():
 @app.get("/status")
 async def status():
     return{"status":"200","msg":"working"}
+
+@app.get("/hello")
+async def greeting():
+    return{"message":"hello class"}
