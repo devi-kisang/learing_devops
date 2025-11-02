@@ -44,10 +44,13 @@ jobs:
           push: true
           tags: ghcr.io/devi-kisang/fastapi-project:latest
 
-      # - name: Execute remote SSH commands using password
-      #   uses: appleboy/ssh-action@v1
-      #   with:
-      #     host: ${{ secrets.SERVER_HOST }}
-      #     username: azureuser
-      #     key: ${{ secrets.SSH_KEY }}
-      #     script: 
+      - name: Execute remote SSH commands using password
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: azureuser
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd fastapi
+            sudo docker compose pull
+            sudo docker compose up -d
