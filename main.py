@@ -12,4 +12,4 @@ async def status():
 
 @app.get("/hello")
 async def greeting():
-    return{"message":"hello class"}
+    return{"message":"hello sir"}
